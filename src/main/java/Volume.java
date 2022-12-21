@@ -1,20 +1,23 @@
 public class Volume {
 
-    public int currentVolume;
+    private int currentVolume;
 
     public int getCurrentVolume() {
         return currentVolume;
     }
 
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 10) {
+    public void setCurrentVolume(int CurrentVolume) {
+        if (CurrentVolume > 100) {
             return;
         }
-        currentVolume = newCurrentVolume;
+        if (CurrentVolume < 0) {
+            return;
+        }
+        this.currentVolume = CurrentVolume;
     }
 
     public int increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         }
         return currentVolume;
@@ -25,5 +28,19 @@ public class Volume {
             currentVolume = currentVolume - 1;
         }
         return currentVolume;
+    }
+
+    public void maxVolume(int maxVolume) {
+        if (maxVolume >= 100) {
+            currentVolume = 100;
+        }
+        return;
+    }
+
+    public void minVolume(int minVolume) {
+        if (minVolume <= 0) {
+            currentVolume = 0;
+        }
+        return;
     }
 }
