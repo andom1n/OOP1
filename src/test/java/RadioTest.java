@@ -58,55 +58,55 @@ public class RadioTest {
 
     @Test
     public void shouldSetCurrentVolume() {
-        Volume volume = new Volume();
-        volume.setCurrentVolume(9);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(9);
         int expected = 9;
-        int actual = volume.getCurrentVolume();
+        int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNoSetCurrentVolumeAboveMax() {
-        Volume volume = new Volume();
-        volume.setCurrentVolume(11);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(11);
         int expected = 0;
-        int actual = volume.getCurrentVolume();
+        int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldSetToIncreaseVolume() {
-        Volume volume =new Volume();
-        volume.setCurrentVolume(9);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(9);
         int expected = 10;
-        int actual = volume.increaseVolume();
+        int actual = radio.increaseVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldSetToIncreaseVolumeMax() {
-        Volume volume =new Volume();
-        volume.setCurrentVolume(10);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(10);
         int expected = 10;
-        int actual = volume.increaseVolume();
+        int actual = radio.increaseVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldSetToDecreaseVolume(){
-        Volume volume = new Volume();
-        volume.setCurrentVolume(1);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(1);
         int expected = 0;
-        int actual = volume.decreaseVolume();
+        int actual = radio.decreaseVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldSetToDecreaseVolumeMin(){
-        Volume volume = new Volume();
-        volume.setCurrentVolume(0);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(0);
         int expected = 0;
-        int actual = volume.decreaseVolume();
+        int actual = radio.decreaseVolume();
         Assertions.assertEquals(expected, actual);
     }
 }
