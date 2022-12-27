@@ -13,6 +13,15 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldSetRadioStationMinus() {
+        Radio radio = new Radio();
+        radio.setRadioStation(-1);
+        int expected = 0;
+        int actual = radio.getRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldNotSetRadioStationAboveMax() {
         Radio radio = new Radio();
         radio.setRadioStation(10);

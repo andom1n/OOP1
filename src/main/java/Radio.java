@@ -34,6 +34,9 @@ public class Radio {
         if (newRadioStation > 9) {
             return;
         }
+        if (newRadioStation < 0) {
+            return;
+        }
         radioStation = newRadioStation;
     }
     
